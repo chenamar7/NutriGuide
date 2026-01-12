@@ -2,7 +2,7 @@
 
 **A Data-Driven Personal Nutrition Management System**
 
-> University Database Course Project
+> Database Project
 
 ## Project Overview
 
