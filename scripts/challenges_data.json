@@ -1,0 +1,450 @@
+[
+  {
+    "title": "Sunshine Vitamin",
+    "question": "Which vitamin can your body produce when exposed to sunlight?",
+    "options": ["Vitamin A", "Vitamin C", "Vitamin D", "Vitamin K"],
+    "correct": 2,
+    "category": "Vitamins"
+  },
+  {
+    "title": "Iron Absorption Boost",
+    "question": "What should you eat with plant-based iron (like spinach) to absorb it better?",
+    "options": ["Dairy products", "Coffee", "Vitamin C rich foods", "Bread"],
+    "correct": 2,
+    "category": "Vitamins"
+  },
+  {
+    "title": "Bone Building Duo",
+    "question": "Which vitamin is essential for your body to absorb calcium?",
+    "options": ["Vitamin A", "Vitamin B12", "Vitamin C", "Vitamin D"],
+    "correct": 3,
+    "category": "Vitamins"
+  },
+  {
+    "title": "Night Vision Helper",
+    "question": "Which vitamin helps you see better in low light conditions?",
+    "options": ["Vitamin A", "Vitamin B12", "Vitamin E", "Vitamin K"],
+    "correct": 0,
+    "category": "Vitamins"
+  },
+  {
+    "title": "Blood Clotting",
+    "question": "Which vitamin is essential for your blood to clot properly when you get a cut?",
+    "options": ["Vitamin C", "Vitamin E", "Vitamin K", "Vitamin B12"],
+    "correct": 2,
+    "category": "Vitamins"
+  },
+  {
+    "title": "Vegan Nutrition",
+    "question": "Which vitamin is found almost exclusively in animal products, so vegans often need supplements?",
+    "options": ["Vitamin C", "Vitamin A", "Vitamin B12", "Vitamin E"],
+    "correct": 2,
+    "category": "Vitamins"
+  },
+  {
+    "title": "Energy Vitamins",
+    "question": "B-vitamins help your body...",
+    "options": ["Build stronger bones", "Convert food into energy", "Fight infections", "Improve vision"],
+    "correct": 1,
+    "category": "Vitamins"
+  },
+  {
+    "title": "Vitamin C and Heat",
+    "question": "Vitamin C is sensitive to heat. What does this mean for cooking?",
+    "options": ["Cook vegetables longer", "Overcooking destroys vitamin C", "Heat increases vitamin C", "No effect"],
+    "correct": 1,
+    "category": "Vitamins"
+  },
+  {
+    "title": "Orange Vegetables",
+    "question": "Orange vegetables like carrots contain beta-carotene, which your body converts into...",
+    "options": ["Vitamin C", "Vitamin D", "Vitamin A", "Vitamin K"],
+    "correct": 2,
+    "category": "Vitamins"
+  },
+  {
+    "title": "Cell Protection",
+    "question": "Which vitamin acts as an antioxidant, protecting your cells from damage?",
+    "options": ["Vitamin K", "Vitamin B1", "Vitamin E", "Vitamin B6"],
+    "correct": 2,
+    "category": "Vitamins"
+  },
+  {
+    "title": "Folate Importance",
+    "question": "Folate (Vitamin B9) is especially important for...",
+    "options": ["Athletes", "Pregnant women", "Elderly people", "Teenagers only"],
+    "correct": 1,
+    "category": "Vitamins"
+  },
+  {
+    "title": "Muscle Cramp Prevention",
+    "question": "Which mineral deficiency is commonly linked to muscle cramps?",
+    "options": ["Calcium", "Magnesium", "Sodium", "Iron"],
+    "correct": 1,
+    "category": "Minerals"
+  },
+  {
+    "title": "Fighting Fatigue",
+    "question": "Low levels of which mineral often causes tiredness and low energy?",
+    "options": ["Zinc", "Calcium", "Iron", "Potassium"],
+    "correct": 2,
+    "category": "Minerals"
+  },
+  {
+    "title": "Blood Pressure Helper",
+    "question": "Which mineral helps counteract the negative effects of sodium on blood pressure?",
+    "options": ["Calcium", "Potassium", "Iron", "Zinc"],
+    "correct": 1,
+    "category": "Minerals"
+  },
+  {
+    "title": "Immune System Mineral",
+    "question": "Which mineral is crucial for immune system function and wound healing?",
+    "options": ["Calcium", "Potassium", "Zinc", "Sodium"],
+    "correct": 2,
+    "category": "Minerals"
+  },
+  {
+    "title": "Salt and Health",
+    "question": "Eating too much sodium (salt) is linked to...",
+    "options": ["Weak muscles", "High blood pressure", "Poor vision", "Low energy"],
+    "correct": 1,
+    "category": "Minerals"
+  },
+  {
+    "title": "Thyroid Health",
+    "question": "Which mineral is essential for your thyroid to function properly?",
+    "options": ["Iron", "Iodine", "Zinc", "Copper"],
+    "correct": 1,
+    "category": "Minerals"
+  },
+  {
+    "title": "Iron Absorption Blockers",
+    "question": "Which common beverages can reduce iron absorption if consumed with meals?",
+    "options": ["Water and juice", "Tea and coffee", "Milk only", "Sparkling water"],
+    "correct": 1,
+    "category": "Minerals"
+  },
+  {
+    "title": "Iron Types",
+    "question": "Which type of iron is absorbed more efficiently by your body?",
+    "options": ["Non-heme iron (plants)", "Heme iron (meat)", "Synthetic iron", "They're equal"],
+    "correct": 1,
+    "category": "Minerals"
+  },
+  {
+    "title": "Electrolytes",
+    "question": "Which minerals are electrolytes that help regulate hydration and muscle function?",
+    "options": ["Iron and Zinc", "Sodium, Potassium, Magnesium", "Calcium only", "Copper and Manganese"],
+    "correct": 1,
+    "category": "Minerals"
+  },
+  {
+    "title": "Complete Plant Protein",
+    "question": "Which plant food contains ALL essential amino acids (complete protein)?",
+    "options": ["Rice", "Beans", "Quinoa", "Wheat"],
+    "correct": 2,
+    "category": "Macros"
+  },
+  {
+    "title": "Protein and Muscles",
+    "question": "When is eating protein most beneficial for muscle recovery?",
+    "options": ["Only in the morning", "After exercise", "Before sleep only", "Timing doesn't matter"],
+    "correct": 1,
+    "category": "Macros"
+  },
+  {
+    "title": "Protein Distribution",
+    "question": "For muscle building, how should you consume protein throughout the day?",
+    "options": ["All at breakfast", "Spread across meals", "Only after workouts", "Only at dinner"],
+    "correct": 1,
+    "category": "Macros"
+  },
+  {
+    "title": "Essential Amino Acids",
+    "question": "How many amino acids can your body NOT produce on its own?",
+    "options": ["5", "7", "9", "12"],
+    "correct": 2,
+    "category": "Macros"
+  },
+  {
+    "title": "Calorie Burning Nutrient",
+    "question": "Which nutrient burns the most calories during digestion?",
+    "options": ["Carbohydrates", "Fat", "Protein", "Fiber"],
+    "correct": 2,
+    "category": "Macros"
+  },
+  {
+    "title": "Sustained Energy",
+    "question": "For long-lasting energy without crashes, you should eat...",
+    "options": ["Simple sugars", "Complex carbs (oats, whole grains)", "Candy", "White bread"],
+    "correct": 1,
+    "category": "Macros"
+  },
+  {
+    "title": "Brain Fuel",
+    "question": "Your brain primarily runs on glucose and uses about what percentage of your daily energy?",
+    "options": ["5%", "10%", "20%", "35%"],
+    "correct": 2,
+    "category": "Macros"
+  },
+  {
+    "title": "Daily Fiber Goal",
+    "question": "Most adults should aim for how much fiber per day?",
+    "options": ["5-10 grams", "25-30 grams", "50-60 grams", "100 grams"],
+    "correct": 1,
+    "category": "Macros"
+  },
+  {
+    "title": "Fiber Benefits",
+    "question": "Eating enough fiber helps with...",
+    "options": ["Building muscle", "Digestion and feeling full", "Stronger bones", "Better vision"],
+    "correct": 1,
+    "category": "Macros"
+  },
+  {
+    "title": "Fat-Soluble Vitamins",
+    "question": "Vitamins A, D, E, and K require what to be absorbed by your body?",
+    "options": ["Water", "Dietary fat", "Protein", "Carbohydrates"],
+    "correct": 1,
+    "category": "Macros"
+  },
+  {
+    "title": "Healthy Fats",
+    "question": "Which foods contain heart-healthy unsaturated fats?",
+    "options": ["Butter and lard", "Avocado and olive oil", "Margarine", "Fried foods"],
+    "correct": 1,
+    "category": "Macros"
+  },
+  {
+    "title": "Omega-3 Benefits",
+    "question": "Omega-3 fatty acids (found in fatty fish) are especially good for...",
+    "options": ["Bone health", "Brain and heart health", "Digestion only", "Sleep quality"],
+    "correct": 1,
+    "category": "Macros"
+  },
+  {
+    "title": "Trans Fats Warning",
+    "question": "Why should you avoid trans fats?",
+    "options": ["They're expensive", "They raise bad cholesterol (LDL)", "They taste bad", "They have too many calories"],
+    "correct": 1,
+    "category": "Macros"
+  },
+  {
+    "title": "Essential Fatty Acids",
+    "question": "Which fats must come from your diet because your body cannot make them?",
+    "options": ["Saturated fats", "Trans fats", "Omega-3 and Omega-6", "Cholesterol"],
+    "correct": 2,
+    "category": "Macros"
+  },
+  {
+    "title": "Greek Yogurt Advantage",
+    "question": "Compared to regular yogurt, Greek yogurt typically has...",
+    "options": ["More sugar", "Double the protein", "More fat only", "Same nutrition"],
+    "correct": 1,
+    "category": "Food Sources"
+  },
+  {
+    "title": "Egg Nutrition",
+    "question": "Where are most of an egg's vitamins and minerals found?",
+    "options": ["The white", "The yolk", "Both equally", "The shell"],
+    "correct": 1,
+    "category": "Food Sources"
+  },
+  {
+    "title": "Potassium-Rich Food",
+    "question": "Which food is well-known for being high in potassium?",
+    "options": ["Apple", "Banana", "Orange", "Grapes"],
+    "correct": 1,
+    "category": "Food Sources"
+  },
+  {
+    "title": "Omega-3 Fish",
+    "question": "Which fish is one of the best sources of Omega-3 fatty acids?",
+    "options": ["Tilapia", "Salmon", "Catfish", "Cod"],
+    "correct": 1,
+    "category": "Food Sources"
+  },
+  {
+    "title": "Fiber and Protein Combo",
+    "question": "Which affordable foods are excellent sources of BOTH fiber and protein?",
+    "options": ["White rice", "Beans and lentils", "Bread", "Pasta"],
+    "correct": 1,
+    "category": "Food Sources"
+  },
+  {
+    "title": "Antioxidant Berries",
+    "question": "Which berries are among the highest in antioxidants?",
+    "options": ["Strawberries", "Dark berries (blueberries, blackberries)", "Raspberries", "Cranberries"],
+    "correct": 1,
+    "category": "Food Sources"
+  },
+  {
+    "title": "Cooked Tomatoes",
+    "question": "Cooking tomatoes actually INCREASES the absorption of which beneficial compound?",
+    "options": ["Vitamin C", "Lycopene", "Beta-carotene", "Fiber"],
+    "correct": 1,
+    "category": "Food Sources"
+  },
+  {
+    "title": "Frozen Vegetables",
+    "question": "Are frozen vegetables a healthy choice?",
+    "options": ["No, they lose all nutrients", "Yes, often as nutritious as fresh", "Only if organic", "Never as good as fresh"],
+    "correct": 1,
+    "category": "Food Sources"
+  },
+  {
+    "title": "Garlic Preparation",
+    "question": "To get the most health benefits from garlic, you should...",
+    "options": ["Cook it immediately", "Crush it and wait a few minutes before cooking", "Eat it whole", "Boil it for 10 minutes"],
+    "correct": 1,
+    "category": "Food Sources"
+  },
+  {
+    "title": "Fish and Mercury",
+    "question": "Which fish generally contains LESS mercury and is safer to eat frequently?",
+    "options": ["Swordfish", "King mackerel", "Sardines and salmon", "Shark"],
+    "correct": 2,
+    "category": "Food Sources"
+  },
+  {
+    "title": "Nutrient-Dense Greens",
+    "question": "Why are leafy greens like kale and spinach called 'nutrient-dense'?",
+    "options": ["They have many calories", "They pack lots of nutrients per calorie", "They're expensive", "They taste strong"],
+    "correct": 1,
+    "category": "Food Sources"
+  },
+  {
+    "title": "Slow Eating Benefits",
+    "question": "Eating slowly helps you...",
+    "options": ["Digest food faster", "Recognize when you're full (prevent overeating)", "Absorb more calories", "Nothing significant"],
+    "correct": 1,
+    "category": "General"
+  },
+  {
+    "title": "Chewing Food Well",
+    "question": "Thoroughly chewing your food helps your body...",
+    "options": ["Burn more fat", "Absorb more nutrients", "Build muscle", "Nothing really"],
+    "correct": 1,
+    "category": "General"
+  },
+  {
+    "title": "Meal Planning Benefits",
+    "question": "Planning meals ahead has been shown to help people...",
+    "options": ["Spend more money", "Make healthier food choices", "Eat faster", "Lose taste preferences"],
+    "correct": 1,
+    "category": "General"
+  },
+  {
+    "title": "Colorful Plate",
+    "question": "Eating a variety of colorful vegetables ensures you get...",
+    "options": ["More calories", "A diverse range of vitamins and nutrients", "Better taste only", "More protein"],
+    "correct": 1,
+    "category": "General"
+  },
+  {
+    "title": "Thirst Signal",
+    "question": "By the time you feel thirsty, you are likely already...",
+    "options": ["Well hydrated", "Slightly dehydrated", "Overhydrated", "Hungry"],
+    "correct": 1,
+    "category": "General"
+  },
+  {
+    "title": "Dehydration Effects",
+    "question": "Even mild dehydration (1-2% fluid loss) can impair your...",
+    "options": ["Bone strength", "Concentration and cognitive function", "Hair growth", "Nail strength"],
+    "correct": 1,
+    "category": "General"
+  },
+  {
+    "title": "Food Label Reading",
+    "question": "On a nutrition label, ingredients are listed in what order?",
+    "options": ["Alphabetically", "By weight (most first)", "By importance", "Randomly"],
+    "correct": 1,
+    "category": "General"
+  },
+  {
+    "title": "Hidden Sugar Names",
+    "question": "Which of these is NOT a name for sugar on food labels?",
+    "options": ["Dextrose", "High fructose corn syrup", "Maltose", "Sodium chloride"],
+    "correct": 3,
+    "category": "General"
+  },
+  {
+    "title": "Sugary Drinks Problem",
+    "question": "Why are sugary drinks particularly bad for weight management?",
+    "options": ["Too much caffeine", "They don't make you feel full", "They damage teeth only", "They cause immediate weight gain"],
+    "correct": 1,
+    "category": "General"
+  },
+  {
+    "title": "Fruit Juice vs Whole Fruit",
+    "question": "Compared to fruit juice, eating whole fruit is better because it has more...",
+    "options": ["Sugar", "Calories", "Fiber", "Water"],
+    "correct": 2,
+    "category": "General"
+  },
+  {
+    "title": "Gut Health Foods",
+    "question": "Which foods contain probiotics (beneficial bacteria for your gut)?",
+    "options": ["White bread", "Yogurt and fermented foods", "Rice", "Chicken"],
+    "correct": 1,
+    "category": "General"
+  },
+  {
+    "title": "Prebiotics",
+    "question": "Prebiotics are types of fiber that feed the good bacteria in your gut. Where are they found?",
+    "options": ["Meat", "Garlic, onions, and bananas", "Dairy", "Eggs"],
+    "correct": 1,
+    "category": "General"
+  },
+  {
+    "title": "Metabolism and Muscle",
+    "question": "Which tissue burns more calories at rest?",
+    "options": ["Fat tissue", "Muscle tissue", "Bone tissue", "They're equal"],
+    "correct": 1,
+    "category": "General"
+  },
+  {
+    "title": "Metabolism and Age",
+    "question": "Metabolism naturally slows down with age, primarily because of...",
+    "options": ["Bone density loss", "Muscle mass loss", "Less sleep", "More stress"],
+    "correct": 1,
+    "category": "General"
+  },
+  {
+    "title": "Weight Loss Basics",
+    "question": "A 500 calorie daily deficit typically leads to about how much weight loss per week?",
+    "options": ["0.25 kg (0.5 lb)", "0.5 kg (1 lb)", "1 kg (2 lbs)", "2 kg (4 lbs)"],
+    "correct": 1,
+    "category": "General"
+  },
+  {
+    "title": "Meal Frequency Myth",
+    "question": "Does eating many small meals significantly boost your metabolism?",
+    "options": ["Yes, much faster metabolism", "Slightly", "No, total daily calories matter more", "Only for athletes"],
+    "correct": 2,
+    "category": "General"
+  },
+  {
+    "title": "Whole vs Refined Grains",
+    "question": "Whole grain bread is healthier than white bread because it contains more...",
+    "options": ["Calories", "Sugar", "Fiber and nutrients", "Salt"],
+    "correct": 2,
+    "category": "General"
+  },
+  {
+    "title": "Consistency in Diet",
+    "question": "For long-term health, what matters MORE?",
+    "options": ["Having perfect diet days", "Consistent good habits over time", "Timing of cheat meals", "Expensive supplements"],
+    "correct": 1,
+    "category": "General"
+  },
+  {
+    "title": "Empty Calories",
+    "question": "Foods with 'empty calories' provide...",
+    "options": ["Zero calories", "Energy but very few nutrients", "Only protein", "Negative calories"],
+    "correct": 1,
+    "category": "General"
+  }
+]

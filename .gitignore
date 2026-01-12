@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+
+
+# Environment variables (SENSITIVE - never commit!)
+.env
+.env.local
+.env.production
+backend/.env
+
+# USDA Data files (too large for git)
+usda_data/
+usda_data_sr_legacy/
+*.csv
+*.xlsx
+
+# Unused/deprecated code
+unused/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Build outputs
+dist/
+build/
+.cache/
+
+# Test coverage
+coverage/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+.cursorrules

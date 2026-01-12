@@ -1,0 +1,776 @@
+{
+	"info": {
+		"_postman_id": "nutriguide-api-collection",
+		"name": "NutriGuide API",
+		"description": "Complete API collection for NutriGuide nutrition tracking app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000"
+		},
+		{
+			"key": "token",
+			"value": ""
+		},
+		{
+			"key": "adminToken",
+			"value": ""
+		}
+	],
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"testuser\",\n    \"email\": \"test@example.com\",\n    \"password\": \"password123\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/auth/register",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "auth", "register"]
+						}
+					}
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"if (jsonData.token) {",
+									"    pm.collectionVariables.set('token', jsonData.token);",
+									"    console.log('Token saved!');",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test@example.com\",\n    \"password\": \"password123\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/auth/login",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "auth", "login"]
+						}
+					}
+				},
+				{
+					"name": "Get Current User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/auth/me",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "auth", "me"]
+						}
+					}
+				},
+				{
+					"name": "Register Admin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"adminuser\",\n    \"email\": \"admin@example.com\",\n    \"password\": \"admin123\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/auth/register",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "auth", "register"]
+						},
+						"description": "After registering, run this SQL to make user admin:\nUPDATE Users SET is_admin = TRUE WHERE email = 'admin@example.com';"
+					}
+				},
+				{
+					"name": "Login Admin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"if (jsonData.token) {",
+									"    pm.collectionVariables.set('adminToken', jsonData.token);",
+									"    console.log('Admin token saved!');",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"admin@example.com\",\n    \"password\": \"admin123\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/auth/login",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "auth", "login"]
+						}
+					}
+				},
+				{
+					"name": "Delete User (Admin)",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{adminToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/auth/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "auth", "1"]
+						},
+						"description": "Delete user by ID. Requires admin token."
+					}
+				}
+			]
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "Get Profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/profile",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "profile"]
+						}
+					}
+				},
+				{
+					"name": "Update Profile",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"birth_date\": \"1995-05-15\",\n    \"gender\": \"Male\",\n    \"height_cm\": 175,\n    \"weight_kg\": 70,\n    \"activity_level\": \"Moderate\",\n    \"goal\": \"Maintain\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/profile",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "profile"]
+						}
+					}
+				},
+				{
+					"name": "Calculate Targets",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/profile/calculate",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "profile", "calculate"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Foods",
+			"item": [
+				{
+					"name": "Get Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/foods/categories",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "foods", "categories"]
+						}
+					}
+				},
+				{
+					"name": "Search Foods (Basic)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/foods/search?q=chicken&limit=10",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "foods", "search"],
+							"query": [
+								{ "key": "q", "value": "chicken" },
+								{ "key": "limit", "value": "10" }
+							]
+						}
+					}
+				},
+				{
+					"name": "Search Foods (With Filters)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/foods/search?q=chicken&limit=10&page=1&category_id=5&min_cal=100&max_cal=300",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "foods", "search"],
+							"query": [
+								{ "key": "q", "value": "chicken" },
+								{ "key": "limit", "value": "10" },
+								{ "key": "page", "value": "1" },
+								{ "key": "category_id", "value": "5" },
+								{ "key": "min_cal", "value": "100" },
+								{ "key": "max_cal", "value": "300" }
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Food Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/foods/167512",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "foods", "167512"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Food Log",
+			"item": [
+				{
+					"name": "Log a Food",
+					"request": {
+						"method": "POST",
+						"header": [
+							{ "key": "Authorization", "value": "Bearer {{token}}" },
+							{ "key": "Content-Type", "value": "application/json" }
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"food_id\": 167512,\n    \"serving_size_grams\": 150\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/log",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "log"]
+						}
+					}
+				},
+				{
+					"name": "Get Today's Log",
+					"request": {
+						"method": "GET",
+						"header": [
+							{ "key": "Authorization", "value": "Bearer {{token}}" }
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/log/today",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "log", "today"]
+						}
+					}
+				},
+				{
+					"name": "Get Log by Date",
+					"request": {
+						"method": "GET",
+						"header": [
+							{ "key": "Authorization", "value": "Bearer {{token}}" }
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/log?date=2025-12-22",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "log"],
+							"query": [
+								{ "key": "date", "value": "2025-12-22" }
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Log History",
+					"request": {
+						"method": "GET",
+						"header": [
+							{ "key": "Authorization", "value": "Bearer {{token}}" }
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/log/history?days=7",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "log", "history"],
+							"query": [
+								{ "key": "days", "value": "7" }
+							]
+						}
+					}
+				},
+				{
+					"name": "Update Log Entry",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{ "key": "Authorization", "value": "Bearer {{token}}" },
+							{ "key": "Content-Type", "value": "application/json" }
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"serving_size_grams\": 200\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/log/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "log", "1"]
+						}
+					}
+				},
+				{
+					"name": "Delete Log Entry",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{ "key": "Authorization", "value": "Bearer {{token}}" }
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/log/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "log", "1"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Analysis",
+			"item": [
+				{
+					"name": "Gap Analysis - Today",
+					"request": {
+						"method": "GET",
+						"header": [
+							{ "key": "Authorization", "value": "Bearer {{token}}" }
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/analysis/gap",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "analysis", "gap"]
+						}
+					}
+				},
+				{
+					"name": "Gap Analysis - By Date",
+					"request": {
+						"method": "GET",
+						"header": [
+							{ "key": "Authorization", "value": "Bearer {{token}}" }
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/analysis/gap?date=2025-12-22",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "analysis", "gap"],
+							"query": [
+								{ "key": "date", "value": "2025-12-22" }
+							]
+						}
+					}
+				},
+				{
+					"name": "Food Recommendations",
+					"request": {
+						"method": "GET",
+						"header": [
+							{ "key": "Authorization", "value": "Bearer {{token}}" }
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/analysis/recommendations",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "analysis", "recommendations"]
+						}
+					}
+				},
+				{
+					"name": "Weekly Trends",
+					"request": {
+						"method": "GET",
+						"header": [
+							{ "key": "Authorization", "value": "Bearer {{token}}" }
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/analysis/trends",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "analysis", "trends"]
+						}
+					}
+				},
+				{
+					"name": "Logging Streak",
+					"request": {
+						"method": "GET",
+						"header": [
+							{ "key": "Authorization", "value": "Bearer {{token}}" }
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/analysis/streak",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "analysis", "streak"]
+						}
+					}
+				},
+				{
+					"name": "Effective Foods - Protein",
+					"request": {
+						"method": "GET",
+						"header": [
+							{ "key": "Authorization", "value": "Bearer {{token}}" }
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/analysis/effective?nutrient_id=1003&days=30",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "analysis", "effective"],
+							"query": [
+								{ "key": "nutrient_id", "value": "1003" },
+								{ "key": "days", "value": "30" }
+							]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Facts",
+			"item": [
+				{
+					"name": "Get Random Fact",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/facts/random",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "facts", "random"]
+						}
+					}
+				},
+				{
+					"name": "Get Random Fact (by category)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/facts/random?category=Vitamins",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "facts", "random"],
+							"query": [
+								{ "key": "category", "value": "Vitamins" }
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Fact Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/facts/categories",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "facts", "categories"]
+						}
+					}
+				},
+				{
+					"name": "Get All Facts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/facts",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "facts"]
+						}
+					}
+				},
+				{
+					"name": "Get Fact by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/facts/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "facts", "1"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Challenges",
+			"item": [
+				{
+					"name": "Get Random Challenge",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/challenges/random",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "challenges", "random"]
+						}
+					}
+				},
+				{
+					"name": "Get Random Challenge (by category)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/challenges/random?category=Vitamins",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "challenges", "random"],
+							"query": [
+								{ "key": "category", "value": "Vitamins" }
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Random Challenge (with exclude)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/challenges/random?exclude=1,2,3,4,5",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "challenges", "random"],
+							"query": [
+								{ "key": "exclude", "value": "1,2,3,4,5" }
+							]
+						},
+						"description": "Exclude already-seen challenge IDs to prevent repeats"
+					}
+				},
+				{
+					"name": "Get Challenge Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/challenges/categories",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "challenges", "categories"]
+						}
+					}
+				},
+				{
+					"name": "Get Challenge Count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/challenges/count",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "challenges", "count"]
+						}
+					}
+				},
+				{
+					"name": "Get Challenge Count (by category)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/challenges/count?category=Minerals",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "challenges", "count"],
+							"query": [
+								{ "key": "category", "value": "Minerals" }
+							]
+						}
+					}
+				},
+				{
+					"name": "Get User Challenge Stats",
+					"request": {
+						"method": "GET",
+						"header": [
+							{ "key": "Authorization", "value": "Bearer {{token}}" }
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/challenges/stats",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "challenges", "stats"]
+						}
+					}
+				},
+				{
+					"name": "Get Challenge by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/challenges/1",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "challenges", "1"]
+						}
+					}
+				},
+				{
+					"name": "Submit Answer (Guest)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{ "key": "Content-Type", "value": "application/json" }
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"option_id\": 3\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/challenges/1/answer",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "challenges", "1", "answer"]
+						},
+						"description": "Answer without token - no score tracking"
+					}
+				},
+				{
+					"name": "Submit Answer (Logged In)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{ "key": "Authorization", "value": "Bearer {{token}}" },
+							{ "key": "Content-Type", "value": "application/json" }
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"option_id\": 3\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/challenges/1/answer",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "challenges", "1", "answer"]
+						},
+						"description": "Answer with token - updates score and streak"
+					}
+				}
+			]
+		},
+		{
+			"name": "Admin (requires admin)",
+			"item": [
+				{
+					"name": "Dashboard - Platform Stats",
+					"request": {
+						"method": "GET",
+						"header": [
+							{ "key": "Authorization", "value": "Bearer {{adminToken}}" }
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/admin/dashboard",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "admin", "dashboard"]
+						}
+					}
+				},
+				{
+					"name": "Deficiencies - Nutrient Struggles",
+					"request": {
+						"method": "GET",
+						"header": [
+							{ "key": "Authorization", "value": "Bearer {{adminToken}}" }
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/admin/deficiencies",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "admin", "deficiencies"]
+						}
+					}
+				},
+				{
+					"name": "Popular Categories by Goal",
+					"request": {
+						"method": "GET",
+						"header": [
+							{ "key": "Authorization", "value": "Bearer {{adminToken}}" }
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/admin/popular-categories",
+							"host": ["{{baseUrl}}"],
+							"path": ["api", "admin", "popular-categories"]
+						}
+					}
+				}
+			]
+		}
+	]
+}

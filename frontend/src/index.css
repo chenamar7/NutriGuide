@@ -1,0 +1,283 @@
+@import "tailwindcss";
+
+/* ===================================
+   NutriGuide Color Palette
+   Main Colors: Green (gradient), Brown, White
+   Goal: Clean, natural, healthy feel
+   =================================== */
+
+:root {
+   /* ---- GREEN (Primary - Brighter Gradient) ---- */
+   --color-green: #198e44;
+   /* Brighter main green */
+   --color-green-light: #4ADE80;
+   /* Light vibrant green */
+   --color-green-dark: #16A34A;
+   /* Rich medium-dark green */
+   --color-green-darker: #15803D;
+   --color-green-subtle: #DCFCE7;
+   /* Light mint */
+
+   /* Gradient stops - brighter with nice shade */
+   --gradient-green-start: #15803D;
+   /* Darker end */
+   --gradient-green-end: #22C55E;
+   /* Bright end */
+
+   /* ---- BROWN (Secondary - Darker) ---- */
+   --color-brown: #6B4423;
+   /* Darker main brown */
+   --color-brown-light: #8B5A2B;
+   --color-brown-dark: #3D2314;
+   /* Rich dark brown */
+   --color-brown-subtle: #F3E5D7;
+
+   /* ---- WHITE & NEUTRALS ---- */
+   --color-white: #FFFFFF;
+   --color-background: #FDF8F3;
+   --color-surface: #FFFFFF;
+   --color-border: #E8E4DF;
+
+   /* ---- TEXT ---- */
+   --color-text: #1F2937;
+   --color-text-muted: #6B7280;
+   --color-text-light: #9CA3AF;
+
+   /* ---- STATUS ---- */
+   --color-warning: #D97706;
+   --color-danger: #DC2626;
+}
+
+/* ===================================
+   App Background - Use on all pages
+   Very light brown/cream - uniform color
+   =================================== */
+
+.app-background {
+   background: #FDF8F3;
+   min-height: 100vh;
+}
+
+/* ===================================
+   Base Styles
+   =================================== */
+
+* {
+   box-sizing: border-box;
+}
+
+body {
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+   background: #FDF8F3;
+   color: var(--color-text);
+   margin: 0;
+   min-height: 100vh;
+   line-height: 1.5;
+}
+
+/* ===================================
+   Gradient Utilities
+   =================================== */
+
+/* Green gradient - left to right */
+.bg-gradient-green {
+   background: linear-gradient(135deg, var(--gradient-green-start) 0%, var(--gradient-green-end) 100%);
+}
+
+/* Green gradient - top to bottom */
+.bg-gradient-green-vertical {
+   background: linear-gradient(180deg, var(--gradient-green-start) 0%, var(--gradient-green-end) 100%);
+}
+
+/* Subtle green gradient for cards */
+.bg-gradient-green-subtle {
+   background: linear-gradient(135deg, #D8F3DC 0%, #B7E4C7 100%);
+}
+
+/* Brown gradient */
+.bg-gradient-brown {
+   background: linear-gradient(135deg, var(--color-brown-dark) 0%, var(--color-brown) 100%);
+}
+
+/* ===================================
+   Color Utilities
+   =================================== */
+
+/* Green */
+.text-green {
+   color: var(--color-green);
+}
+
+.text-green-dark {
+   color: var(--color-green-dark);
+}
+
+.bg-green {
+   background-color: var(--color-green);
+}
+
+.bg-green-light {
+   background-color: var(--color-green-light);
+}
+
+.bg-green-dark {
+   background-color: var(--color-green-dark);
+}
+
+.bg-green-subtle {
+   background-color: var(--color-green-subtle);
+}
+
+.border-green {
+   border-color: var(--color-green);
+}
+
+.border-green-subtle {
+   border-color: var(--color-green-subtle);
+}
+
+/* Brown */
+.text-brown {
+   color: var(--color-brown);
+}
+
+.text-brown-dark {
+   color: var(--color-brown-dark);
+}
+
+.bg-brown {
+   background-color: var(--color-brown);
+}
+
+.bg-brown-light {
+   background-color: var(--color-brown-light);
+}
+
+.bg-brown-dark {
+   background-color: var(--color-brown-dark);
+}
+
+.bg-brown-subtle {
+   background-color: var(--color-brown-subtle);
+}
+
+.border-brown {
+   border-color: var(--color-brown);
+}
+
+.border-brown-subtle {
+   border-color: var(--color-brown-subtle);
+}
+
+/* Status */
+.text-warning {
+   color: var(--color-warning);
+}
+
+.text-danger {
+   color: var(--color-danger);
+}
+
+/* ===================================
+   Component Styles
+   =================================== */
+
+/* Card Component */
+.card {
+   background: white;
+   border-radius: 8px;
+   border: 1px solid #E5E7EB;
+   padding: 16px 20px;
+   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+   transition: all 0.2s ease;
+}
+
+.card:hover {
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+   transform: translateY(-1px);
+}
+
+/* Card with green accent */
+.card-green {
+   background: #F0FDF4;
+   border-radius: 8px;
+   border: 2px solid #22C55E;
+   padding: 16px 20px;
+   box-shadow: 0 1px 3px rgba(34, 197, 94, 0.12);
+   transition: all 0.2s ease;
+}
+
+.card-green:hover {
+   box-shadow: 0 4px 12px rgba(34, 197, 94, 0.2);
+   transform: translateY(-1px);
+}
+
+/* Card with brown accent */
+.card-brown {
+   background: #FDF8F3;
+   border-radius: 8px;
+   border: 2px solid #8B5A2B;
+   padding: 16px 20px;
+   box-shadow: 0 1px 3px rgba(139, 90, 43, 0.12);
+   transition: all 0.2s ease;
+}
+
+.card-brown:hover {
+   box-shadow: 0 4px 12px rgba(139, 90, 43, 0.2);
+   transform: translateY(-1px);
+}
+
+/* Primary button - Green */
+.btn-primary {
+   background: linear-gradient(135deg, #16A34A 0%, #22C55E 100%);
+   color: white;
+   padding: 10px 18px;
+   border-radius: 6px;
+   border: none;
+   font-weight: 600;
+   font-size: 14px;
+   cursor: pointer;
+   transition: all 0.2s ease;
+   box-shadow: 0 2px 4px rgba(22, 163, 74, 0.2);
+}
+
+.btn-primary:hover {
+   transform: translateY(-1px);
+   box-shadow: 0 4px 8px rgba(22, 163, 74, 0.25);
+   background: linear-gradient(135deg, #15803D 0%, #16A34A 100%);
+}
+
+.btn-primary:active {
+   transform: translateY(0px);
+   box-shadow: 0 1px 2px rgba(22, 163, 74, 0.2);
+}
+
+/* Secondary button - Brown */
+.btn-secondary {
+   background: linear-gradient(135deg, #8B5A2B 0%, #A67C52 100%);
+   color: white;
+   padding: 10px 18px;
+   border-radius: 6px;
+   border: none;
+   font-weight: 600;
+   font-size: 14px;
+   cursor: pointer;
+   transition: all 0.2s ease;
+   box-shadow: 0 2px 4px rgba(139, 90, 43, 0.2);
+}
+
+.btn-secondary:hover {
+   transform: translateY(-1px);
+   box-shadow: 0 4px 8px rgba(139, 90, 43, 0.25);
+   background: linear-gradient(135deg, #6B4423 0%, #8B5A2B 100%);
+}
+
+.btn-secondary:active {
+   transform: translateY(0px);
+   box-shadow: 0 1px 2px rgba(139, 90, 43, 0.2);
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.05); }
+}
